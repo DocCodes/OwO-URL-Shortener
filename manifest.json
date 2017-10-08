@@ -1,0 +1,41 @@
+{
+   "manifest_version": 2,
+   "version": "0.4.51",
+   "name": "OwO URL Shortener",
+   "short_name": "OwO",
+   // "default_locale": "en-US",
+   "icons": {
+      "128": "images/icon128.png",
+      "64": "images/icon64.png",
+      "32": "images/icon32.png",
+      "24": "images/icon24.png",
+      "16": "images/icon16.png"
+   },
+   "description": "OwO, what's this?",
+
+   "options_page": "options.html",   
+   "permissions": [
+      "clipboardWrite",
+      "activeTab",
+      "storage",
+      "http://*/*"
+   ],
+   "browser_action": {
+      "default_icon": {
+         "128": "images/icon128.png",
+         "64": "images/icon64.png",
+         "32": "images/icon32.png",
+         "24": "images/icon24.png",
+         "16": "images/icon16.png"
+      },
+      "default_title": "OwO"
+   },
+   "content_scripts": [{
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["scripts/content.js"]
+   }],
+   "background": {
+      "scripts": ["scripts/background.js"],
+      "persistent": false
+   }
+}
